@@ -9,12 +9,8 @@ import Foundation
 import UIKit
 
 
-func validateText(text : String) -> Bool{
-    if (text.trimmingCharacters(in: .whitespaces).isEmpty){
-        return false
-    }
-    else{
-        return true
-    }
+func validateText(text : String?) -> Bool {
+  guard let text: String = text else { return false }
+  return !(text.trimmingCharacters(in: .whitespaces).isEmpty)
 }
 

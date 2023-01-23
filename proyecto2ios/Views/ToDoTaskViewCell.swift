@@ -14,12 +14,10 @@ class ToDoTaskViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+        let font: UIFont = UIFont(name: "Helvetica" , size: 16.0) ?? UIFont()
+        let pm: UIFontMetrics = UIFontMetrics(forTextStyle: .subheadline)
+        taskTitle.font = pm.scaledFont(for: font)
+        taskTitle.adjustsFontForContentSizeCategory = true
     }
 
 }

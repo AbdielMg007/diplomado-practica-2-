@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  proyecto2ios
+
+  Created by Abdiel Mg on 22/01/23.
+  
+*/
+"detail.title_header" = "Title";
+"detail.date_header" = "Date";
+"detail.additional_note_header" = "Notes";
+"detail.alert_title" = "Error";
+"detail.alert_message" = "Your task must have a title.";
+"detail.alert_action_title" = "Continue";

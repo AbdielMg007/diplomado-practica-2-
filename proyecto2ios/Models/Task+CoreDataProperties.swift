@@ -16,8 +16,8 @@ extension Task {
     }
 
     @NSManaged public var notes: String?
-    @NSManaged public var date: Date?
-    @NSManaged public var title: String?
+    @NSManaged public var date: Date
+    @NSManaged public var title: String
 
 }
 

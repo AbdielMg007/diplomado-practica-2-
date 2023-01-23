@@ -28,6 +28,12 @@ class TaskDataManager{
         }
     }
     
+    func delete(at index: Int) {
+      fecth()
+      context.delete(tasks[index])
+      saveContext(with: context)
+    }
+    
     func fecthWithPredicate(searchValue : String) {
         
         do{
@@ -53,7 +59,7 @@ class TaskDataManager{
             predicates.append(NSPredicate(format: "notes LIKE %@", notes))
         }
         
-        var compountPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
+        let compountPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
         
         do{
             let fetchRequestWCP = NSFetchRequest<Task>(entityName: "Task")
@@ -77,6 +83,14 @@ class TaskDataManager{
     
     func pushTask(newtask : Task){
         tasks.append(newtask)
+    }
+    
+    func saveContext(with context: NSManagedObjectContext) {
+      do {
+        try context.save()
+      } catch {
+        print ("Error saving context: \(error)")
+      }
     }
     
 }

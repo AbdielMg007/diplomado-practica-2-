@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  proyecto2ios
+
+  Created by Abdiel Mg on 22/01/23.
+  
+*/
+"list_view.title" = "Задачи";
+"list_view.deleteEntry" = "Удалить";
+"list_view.searchBarPlaceholder" = "Поиск по дате";
+
+// Detail View
+"detail.task_title_header" = "Заголовок";
+"detail.task_date_header" = "Датировать";
+"detail.task_additional_note_header" = "Примечания";
+"detail.no_title_alert_title" = "¡Ой!";
+"detail.no_title_alert_message" = "Помните, что ваша заметка должна иметь заголовок.";
+"detail.no_title_alert_action_title" = "Понял";

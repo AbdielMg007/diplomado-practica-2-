@@ -1,0 +1,12 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Title"; ObjectID = "5US-MC-kaa"; */
+"5US-MC-kaa.headerTitle" = "Title";
+
+/* Class = "UITableViewSection"; headerTitle = "Date"; ObjectID = "5rJ-FK-ePW"; */
+"5rJ-FK-ePW.headerTitle" = "Date";
+
+/* Class = "UITableViewSection"; headerTitle = "Notes"; ObjectID = "EBO-o0-hJ4"; */
+"EBO-o0-hJ4.headerTitle" = "Notes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UVa-zT-b5C"; */
+"UVa-zT-b5C.text" = "Label";

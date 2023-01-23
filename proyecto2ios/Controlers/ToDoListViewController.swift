@@ -22,9 +22,8 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
 
         dataManager = TaskDataManager(context: context)
         dataManager!.fecth()
-        //dataManager?.fecthWithPredicate(searchValue: "task 1")
-        //dataManager?.fecthWithCompountPredicate(title: "task*", notes: "*ola*")
     }
+    
     
     @IBAction func unWindFromDetail(segue: UIStoryboardSegue){
         let source = segue.source as! TaskDetailViewController
@@ -37,6 +36,15 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         dataManager?.fecth()
         self.toDoListTable.reloadData()
+    }
+    
+    private func loadListElements(with predicate: String = "") {
+      if predicate.isEmpty {
+        dataManager?.fecth()
+      } else {
+        dataManager?.fecthWithPredicate(searchValue: predicate)
+      }
+        toDoListTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,13 +61,17 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "taskSegue", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        dataManager?.delete(at: indexPath.row)
+        loadListElements()
+      }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "taskSegue" {
             let destination = segue.destination as! TaskDetailViewController
             destination.toDoDetailTask = dataManager?.getTask(at: toDoListTable.indexPathForSelectedRow!.row )
         }
     }
-    
-    
 }
-
